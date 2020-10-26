@@ -12,7 +12,7 @@ public class Medicines {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String medName;
+    private String med_Name;
 
     public Medicines() {
 
@@ -26,12 +26,12 @@ public class Medicines {
         this.id = id;
     }
 
-    public String getMedName() {
-        return medName;
+    public String getMed_Name() {
+        return med_Name;
     }
 
-    public void setMedName(String medName) {
-        this.medName = medName;
+    public void setMed_Name(String med_Name) {
+        this.med_Name = med_Name;
     }
 }
 

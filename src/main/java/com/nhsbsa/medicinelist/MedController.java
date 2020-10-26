@@ -25,7 +25,7 @@ public class MedController {
     @RequestMapping(value="/medicines", method = RequestMethod.GET)
     public List<Medicines> getAllMeds(){
         return medService.getAllMeds();
-    } */
+    }
 
     @RequestMapping(value = "/medicines/{id}")
     public Optional<Medicines> getMedicine(@PathVariable long id) {
@@ -46,7 +46,7 @@ public class MedController {
     public void deleteMedicine(@PathVariable long id) {
         medService.deleteMedicine(id);
     }
-
+*/
 
 
 }

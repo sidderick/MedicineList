@@ -21,11 +21,10 @@ public class MedService {
 
         medRepository.findAll()
                 .forEach(medicines::add);
-
         return medicines;
     }
 
-    public void addMedicine(Medicines medicine) {
+   /* public void addMedicine(Medicines medicine) {
         medRepository.save(medicine);
     }
 
@@ -39,7 +38,7 @@ public class MedService {
 
     public void deleteMedicine(long id) {
         medRepository.deleteById(id);
-    }
+    }*/
 
 
 }
