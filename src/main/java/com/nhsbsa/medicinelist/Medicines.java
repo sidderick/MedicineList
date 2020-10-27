@@ -37,4 +37,3 @@ public class Medicines {
 
 
 
-//TODO med_name being created in db and being pulled instead of medname
