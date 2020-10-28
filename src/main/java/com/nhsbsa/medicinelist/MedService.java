@@ -21,11 +21,11 @@ public class MedService {
         return medicines;
     }
 
-   /* public void addMedicine(Medicines medicine) {
+    public void addMedicine(Medicines medicine) {
         medRepository.save(medicine);
     }
 
-    public Optional<Medicines> getMedicine(long id) {
+ /*   public Optional<Medicines> getMedicine(long id) {
         return medRepository.findById(id);
     }
 
