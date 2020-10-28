@@ -1,10 +1,7 @@
 package com.nhsbsa.medicinelist;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,19 +14,17 @@ import java.io.PrintWriter;
 
 
 
-//@WebServlet(value = "/control")
+
 public class CrudControl extends HttpServlet  {
     @Autowired
     private MedService medService;
 
         @RequestMapping(value="/control")
-        protected void doPost(HttpServletRequest request,
+        public void doPost(HttpServletRequest request,
                               HttpServletResponse response) throws ServletException, IOException {
 
             // read form fields
             String Medname = request.getParameter("Medicince");
-
-            // do some processing here...
 
             // get response writer
             PrintWriter writer = response.getWriter();
@@ -46,15 +41,9 @@ public class CrudControl extends HttpServlet  {
             // return response
             writer.println(htmlRespone);
 
-
-
-
         }
 
-    @RequestMapping(value = "/medicines", method = RequestMethod.POST)
-    public void addMedicine(@RequestBody Medicines Medname) {
-        medService.addMedicine(Medname);
-    }
+
 
 
 }

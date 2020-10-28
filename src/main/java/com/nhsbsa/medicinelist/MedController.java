@@ -14,6 +14,9 @@ public class MedController {
     @Autowired
     private MedService medService;
 
+    @Autowired
+    private CrudControl crudControl;
+
     @RequestMapping(value="/medicines", method = RequestMethod.GET)
     public String getAllMeds(Model model){
         List<Medicines> medicines = medService.getAllMeds();
