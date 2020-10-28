@@ -19,15 +19,10 @@ public class MedController {
 
     @RequestMapping(value="/medicines", method = RequestMethod.GET)
     public String getAllMeds(Model model){
-        List<Medicines> medicines = medService.getAllMeds();
-        model.addAttribute("medicines", medicines);
+        model.addAttribute("medicines", medService.getAllMeds());
         return "medicines";
     }
-/*                                      next method works with @RestController to show raw db data
-    @RequestMapping(value="/medicines", method = RequestMethod.GET)
-    public List<Medicines> getAllMeds(){
-        return medService.getAllMeds();
-    }
+/*
 
     @RequestMapping(value = "/medicines/{id}")
     public Optional<Medicines> getMedicine(@PathVariable long id) {
