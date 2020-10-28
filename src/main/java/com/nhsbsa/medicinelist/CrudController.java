@@ -18,7 +18,7 @@ import java.io.PrintWriter;
 
 
 //@WebServlet(value = "/control")
-public class CrudControl extends HttpServlet  {
+public class CrudController extends HttpServlet  {
     @Autowired
     private MedService medService;
 
