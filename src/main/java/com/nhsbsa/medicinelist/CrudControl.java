@@ -27,7 +27,7 @@ public class CrudControl extends HttpServlet  {
                               HttpServletResponse response) throws ServletException, IOException {
 
             // read form fields
-            String Medname = request.getParameter("Medicince");
+            String medName = request.getParameter("Medicine");
 
             // do some processing here...
 
@@ -35,16 +35,16 @@ public class CrudControl extends HttpServlet  {
             PrintWriter writer = response.getWriter();
 
             // build HTML code
-            String htmlRespone = "<html>";
-            htmlRespone += "<form name=\"Adding med\" method=\"post\" action=\"control\">";
-            htmlRespone += "Medname <input type=\"text\" name=\"Medicince\"/> <br/>";
-            htmlRespone += "<input type=\"submit\" value=\"Add\"/>";
-            htmlRespone += "</form>";
-            htmlRespone += "<h2> " + Medname +" is added to the system<br/>";
-            htmlRespone += "</html>";
+            String htmlResponse = "<html>";
+            htmlResponse += "<form name=\"Adding med\" method=\"post\" action=\"control\">";
+            htmlResponse += "medName <input type=\"text\" name=\"Medicine\"/> <br/>";
+            htmlResponse += "<input type=\"submit\" value=\"Add\"/>";
+            htmlResponse += "</form>";
+            htmlResponse += "<h2> " + medName +" is added to the system<br/>";
+            htmlResponse += "</html>";
 
             // return response
-            writer.println(htmlRespone);
+            writer.println(htmlResponse);
 
 
 
@@ -52,8 +52,8 @@ public class CrudControl extends HttpServlet  {
         }
 
     @RequestMapping(value = "/medicines", method = RequestMethod.POST)
-    public void addMedicine(@RequestBody Medicines Medname) {
-        medService.addMedicine(Medname);
+    public void addMedicine(@RequestBody Medicines medName) {
+        medService.addMedicine(medName);
     }
 
 
