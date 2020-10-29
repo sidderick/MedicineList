@@ -1,4 +1,11 @@
 
-^
-java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ã≤è≠
-]	java:S125"<This block of commented-out lines of code should be removed.(ï¥Ÿ◊˙ˇˇˇˇ8º‰˚Æ÷.
+M
+java:S1128	"+Remove this unused import 'java.util.List'.(’Î±ƒ¯ˇˇˇˇ8è‚ˇõ◊.
+]	java:S125&"<This block of commented-out lines of code should be removed.(ß∂íñ˙ˇˇˇˇ8ÓñÉú◊.
+b
+java:S4684!"@Replace this persistent entity with a simple POJO or DTO object.(‰’¢Œ˙ˇˇˇˇ8ÓñÉú◊.
+e
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ã≤è≠8è‚ˇõ◊.
+W	java:S125"<This block of commented-out lines of code should be removed.(ó≈¢u8™îÅú◊.
+g
+java:S4488 "JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ÂÊ˘˙8ÓñÉú◊.

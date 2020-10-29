@@ -3,9 +3,9 @@ package com.nhsbsa.medicinelist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import java.util.List;
 
 @Controller
@@ -27,13 +27,13 @@ public class MedController {
     @RequestMapping(value = "/medicines/{id}")
     public Optional<Medicines> getMedicine(@PathVariable long id) {
         return medService.getMedicine(id);
-    }
+    }*/
 
     @RequestMapping(value = "/medicines", method = RequestMethod.POST)
     public void addMedicine(@RequestBody Medicines medicines) {
         medService.addMedicine(medicines);
     }
-
+/*
     @RequestMapping(value = "/medicines/{id}", method = RequestMethod.PUT)
     public void updateMedicine(@RequestBody Medicines medicines, @PathVariable long id) {
         medService.updateMedicine(id,medicines);
