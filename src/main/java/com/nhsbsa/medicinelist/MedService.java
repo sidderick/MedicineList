@@ -12,17 +12,21 @@ public class MedService {
     private MedRepository medRepository;
 
 
-    public List<Medicines> getAllMeds() {
+    public List<Medicine> getAllMeds() {
 
-        List<Medicines> medicines = new ArrayList<>();
+        List<Medicine> medicines = new ArrayList<>();
 
         medRepository.findAll()
                 .forEach(medicines::add);
         return medicines;
     }
 
-    public void addMedicine(Medicines medicine) {
+    public void addMedicine(Medicine medicine) {
         medRepository.save(medicine);
+    }
+
+    public List<Medicine> listMedicineByName(String medName) {
+        return medRepository.findByName(medName);
     }
 
  /*   public Optional<Medicines> getMedicine(long id) {

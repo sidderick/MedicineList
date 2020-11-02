@@ -15,7 +15,8 @@ import java.sql.*;
 @Controller
 class CrudControl extends HttpServlet  {
     int isT = 1;
-    int findId;
+    int findId=0;
+
     @Autowired
     private MedService medService;
 
@@ -38,9 +39,6 @@ class CrudControl extends HttpServlet  {
             if (isT == 0){
             htmlRespone += "<h2> " + Medname+" "+ findId+"<br/>";
             htmlRespone += "</html>";}
-            if (isT == 1) {
-                htmlRespone += "<h2> " + Medname+" "+ findId+"<br/>";
-                htmlRespone += "</html>";}
             else{
                 htmlRespone += "<h2> Not Found!!<br/>";
                 htmlRespone += "</html>";}
@@ -48,32 +46,10 @@ class CrudControl extends HttpServlet  {
 
             writer.println(htmlRespone);
 
-            SQLQ(Medname);
+
 
         }
 
-        public void SQLQ(String Medname) {
 
-            String SQLQ = "SELECT (med_Name) FROM MEDICINES WHERE MED_NAME =" + "'" + Medname + "'";
-
-            try {
-                Connection con = DriverManager.getConnection(
-                        "jdbc:h2:file:./medicinelist/src/main/resources/data/medicine", "Sa", "");
-                Statement stmt = con.createStatement();
-
-                ResultSet rs = stmt.executeQuery("SELECT (med_Name),(id) FROM MEDICINES WHERE MED_NAME =" + "'" + Medname + "'");
-                if (rs.next()){
-                    isT = 0;
-                    System.out.println(rs.getString("med_Name"));
-                    System.out.println(rs.getInt("id"));
-                    int findId=rs.getInt("id");}
-                else if (!rs.next()){
-                    System.out.println("not found");
-                    isT=3;}
-                con.close();
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-        }
 
 }
