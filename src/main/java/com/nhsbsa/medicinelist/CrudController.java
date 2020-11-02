@@ -1,7 +1,6 @@
 package com.nhsbsa.medicinelist;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.ServletException;
@@ -15,6 +14,8 @@ import java.sql.*;
 
 @Controller
 class CrudControl extends HttpServlet  {
+    int isT = 1;
+    int findId;
     @Autowired
     private MedService medService;
 
@@ -32,10 +33,17 @@ class CrudControl extends HttpServlet  {
             String htmlRespone = "<html>";
             htmlRespone += "<form name=\"Adding med\" method=\"post\" action=\"control\">";
             htmlRespone += "Medname <input type=\"text\" name=\"Medicince\"/> <br/>";
-            htmlRespone += "<input type=\"submit\" value=\"Add\"/>";
+            htmlRespone += "<input type=\"submit\" value=\"Find\"/>";
             htmlRespone += "</form>";
-            htmlRespone += "<h2> " + Medname +" is added to the system<br/>";
-            htmlRespone += "</html>";
+            if (isT == 0){
+            htmlRespone += "<h2> " + Medname+" "+ findId+"<br/>";
+            htmlRespone += "</html>";}
+            if (isT == 1) {
+                htmlRespone += "<h2> " + Medname+" "+ findId+"<br/>";
+                htmlRespone += "</html>";}
+            else{
+                htmlRespone += "<h2> Not Found!!<br/>";
+                htmlRespone += "</html>";}
 
 
             writer.println(htmlRespone);
@@ -44,7 +52,7 @@ class CrudControl extends HttpServlet  {
 
         }
 
-        public void SQLQ(String Medname ) {
+        public void SQLQ(String Medname) {
 
             String SQLQ = "SELECT (med_Name) FROM MEDICINES WHERE MED_NAME =" + "'" + Medname + "'";
 
@@ -53,11 +61,15 @@ class CrudControl extends HttpServlet  {
                         "jdbc:h2:file:./medicinelist/src/main/resources/data/medicine", "Sa", "");
                 Statement stmt = con.createStatement();
 
-                ResultSet rs = stmt.executeQuery("SELECT (med_Name) FROM MEDICINES WHERE MED_NAME =" + "'" + Medname + "'");
-                if (rs.next())
+                ResultSet rs = stmt.executeQuery("SELECT (med_Name),(id) FROM MEDICINES WHERE MED_NAME =" + "'" + Medname + "'");
+                if (rs.next()){
+                    isT = 0;
                     System.out.println(rs.getString("med_Name"));
-                else if (!rs.next())
+                    System.out.println(rs.getInt("id"));
+                    int findId=rs.getInt("id");}
+                else if (!rs.next()){
                     System.out.println("not found");
+                    isT=3;}
                 con.close();
             } catch (Exception e) {
                 System.out.println(e);
