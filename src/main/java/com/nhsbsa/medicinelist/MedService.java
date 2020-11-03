@@ -14,11 +14,11 @@ public class MedService {
 
     public List<Medicine> getAllMeds() {
 
-        List<Medicine> medicines = new ArrayList<>();
+        List<Medicine> medicine = new ArrayList<>();
 
         medRepository.findAll()
-                .forEach(medicines::add);
-        return medicines;
+                .forEach(medicine::add);
+        return medicine;
     }
 
     public void addMedicine(Medicine medicine) {

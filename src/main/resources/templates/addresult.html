@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Addition Result</title>
+</head>
+<body>
+
+<div align="center">
+
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{medicines}">Medicines</a>
+    <a th:href="@{control}">Control</a>
+
+</div>
+
+<p th:text="'Medicine Name: ' + ${addmedicines.name}"/>
+<a href="/addmedicines">Add another medicine</a>
+
+</body>
+</html>
