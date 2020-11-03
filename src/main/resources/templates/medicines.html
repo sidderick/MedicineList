@@ -20,11 +20,15 @@
        <tbody>
             <tr th:each="medicine : ${medicine}">
                 <td th:text="${medicine.id}">001</td>
-                <td th:text="${medicine.med_Name}">default</td>
+                <td th:text="${medicine.name}">default</td>
             </tr>
         </tbody>
     </table>
-
-
+<!--
+<form action="#" th:action="@{/medicines}" th:object="${medicines}" method="post">
+    <p>Input Medicine: <input type="text" th:field="*{medicine.name}"/> </p>
+    <p><input type="submit" value="Submit"/></p>
+</form>
+-->
 </body>
 </html>
