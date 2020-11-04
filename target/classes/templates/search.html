@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>List of medicine</title>
+</head>
+<form>
+<div align="center">
+<h1>Medicine List</h1>
+<a th:href="@{/}">Home</a>
+<a th:href="@{/medicines/search}"></a>
+<a th:href="@{control}">Control</a>
+</div>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Medicine Name</th>
+            </tr>
+        </thead>
+       <tbody>
+            <tr th:each="medicine : ${medicine}">
+                <td th:text="${medicine.id}">001</td>
+                <td th:text="${medicine.med_Name}">default</td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+<br>
+<form>
+    <label for="Name">Medcience</label>
+    <input type="text" id="Name" name="Name"><br><br>
+    <input type="submit" value="Submit">
+</form>
+</html>

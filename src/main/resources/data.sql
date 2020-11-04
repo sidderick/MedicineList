@@ -1,4 +1,4 @@
-INSERT INTO MEDICINES (med_Name) VALUES
+INSERT INTO MEDICINES (name) VALUES
 ('aspirin'),
 ('calpol'),
 ('ibuprofen'),

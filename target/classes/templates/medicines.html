@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>List of medicines</title>
+    <title>List of medicine</title>
 </head>
 <body>
 <div align="center">
@@ -18,15 +18,12 @@
             </tr>
         </thead>
        <tbody>
-            <tr th:each="medicines : ${medicines}">
-                <td th:text="${medicines.id}">001</td>
-                <td th:text="${medicines.med_Name}">default</td>
+            <tr th:each="medicine : ${medicine}">
+                <td th:text="${medicine.id}">001</td>
+                <td th:text="${medicine.med_Name}">default</td>
             </tr>
         </tbody>
     </table>
-
-
-
 
 
 </body>

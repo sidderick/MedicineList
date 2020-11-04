@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>List of medicine</title>
 </head>
-<body>
+<form>
 <div align="center">
 <h1>Medicine List</h1>
 <a th:href="@{/}">Home</a>
@@ -25,7 +25,11 @@
             </tr>
         </tbody>
     </table>
-
-
-</body>
+</form>
+<br>
+<form>
+    <label for="Name">Medcience</label>
+    <input type="text" id="Name" name="Name"><br><br>
+    <input type="submit" value="Submit">
+</form>
 </html>
