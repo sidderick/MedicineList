@@ -7,7 +7,7 @@
 <body>
 
 <div align="center">
-
+<h1>Medicine Added</h1>
     <a th:href="@{/}">Home</a>
     <a th:href="@{medicines}">Medicines</a>
     <a th:href="@{control}">Control</a>
@@ -15,7 +15,8 @@
 </div>
 
 <p th:text="'Medicine Name: ' + ${addmedicines.name}"/>
-<a href="/addmedicines">Add another medicine</a>
+<p><a href="/addmedicines">Add another medicine</a></p>
+<p><a href="/medicines">Return to medicine list</a></p>
 
 </body>
 </html>

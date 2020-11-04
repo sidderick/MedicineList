@@ -1,5 +1,5 @@
 INSERT INTO MEDICINE (name) VALUES
 ('aspirin'),
-('calpol'),
+('paracetamol'),
 ('ibuprofen'),
-('codine');
+('codeine');

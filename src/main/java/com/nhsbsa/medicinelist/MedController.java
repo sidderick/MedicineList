@@ -19,8 +19,6 @@ public class MedController {
     @Autowired
     private CrudControl crudControl;
 
-
-
     @GetMapping("/addmedicines")
     public String addMedForm(Model model) {
         model.addAttribute("addmedicines", new Medicine());
@@ -30,14 +28,13 @@ public class MedController {
     @PostMapping("/addmedicines")
     public String addMedSubmit(@ModelAttribute Medicine medicine, Model model) {
         model.addAttribute("addmedicines", medicine);
+        medService.addMedicine(medicine);
         return "addresult";
+
     }
 
 
-
 // next block works to show list of meds on /medicines
-
-
     @RequestMapping(value = "/medicines", method = RequestMethod.GET)
     public String getAllMeds(Model model) {
         model.addAttribute("medicines", medService.getAllMeds());
@@ -56,16 +53,16 @@ public class MedController {
         return medService.getMedicine(id);
     }*/
 
-/*
 
+/*
 
     @RequestMapping(value = "/medicines", method = RequestMethod.POST)
     public void addMedicine(@RequestBody Medicine medicine) {
         medService.addMedicine(medicine);
     }
 
-
 */
+
 
     /*
         @RequestMapping(value = "/medicines/{id}", method = RequestMethod.PUT)
