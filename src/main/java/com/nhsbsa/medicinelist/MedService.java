@@ -27,7 +27,7 @@ public class MedService {
     }
 
 
-    public void updateMedicine(long id, Medicine medicine) {
+    public void updateMedicine(Medicine medicine) {
         medRepository.save(medicine);
     }
 

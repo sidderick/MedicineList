@@ -44,7 +44,7 @@ public class MedController {
     @GetMapping(value = "/medicines/update/{id}")
     public String updateMedicine(@RequestBody Medicine medicine, @PathVariable("id") long id, Model model) {
         model.addAttribute("updatemedicine", medicine);
-        medService.updateMedicine(id, medicine);
+        medService.updateMedicine(medicine);
         return "updatemedicine";
     }
 

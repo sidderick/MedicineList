@@ -13,4 +13,5 @@ public interface MedRepository extends CrudRepository<Medicine, String> {
     void deleteById(long id);
 
 
+    void saveAndFlush(Medicine medicine);
 }

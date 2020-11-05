@@ -4,15 +4,23 @@ import javax.persistence.*;
 
 @Entity
 public class Medicine {
+    private String name;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String name;
+
 
     public Medicine() {
 
+    }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public long getId() {
@@ -23,12 +31,6 @@ public class Medicine {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }
 
