@@ -41,7 +41,12 @@ public class MedController {
         return "medicines";
     }
 
-
+    @GetMapping(value = "/medicines/update/{id}")
+    public String updateMedicine(@RequestBody Medicine medicine, @PathVariable("id") long id, Model model) {
+        model.addAttribute("updatemedicine", medicine);
+        medService.updateMedicine(id, medicine);
+        return "updatemedicine";
+    }
 
 
 
@@ -65,10 +70,7 @@ public class MedController {
 
 
     /*
-        @RequestMapping(value = "/medicines/{id}", method = RequestMethod.PUT)
-        public void updateMedicine(@RequestBody Medicines medicines, @PathVariable long id) {
-            medService.updateMedicine(id,medicines);
-        }
+
 
         @RequestMapping(value = "/medicines/{id}", method = RequestMethod.DELETE)
         public void deleteMedicine(@PathVariable long id) {

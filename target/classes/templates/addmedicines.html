@@ -15,7 +15,7 @@
 </div>
 
 <form action="#" th:action="@{/addmedicines}" th:object="${addmedicines}" method="post">
-    <p>Medicine Name:  <input type="text" th:field="*{name}"/></p>
+    <p>Medicine Name:  <input type="text" th:field="*{name}" placeholder="Input Medicine Name"/></p>
     <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
 </form>
 

@@ -25,6 +25,11 @@ public class MedService {
         medRepository.save(medicine);
     }
 
+
+    public void updateMedicine(long id, Medicine medicine) {
+        medRepository.save(medicine);
+    }
+
     public List<Medicine> listMedicineByName(String medName) {
         return medRepository.findByName(medName);
     }
@@ -33,9 +38,6 @@ public class MedService {
         return medRepository.findById(id);
     }
 
-    public void updateMedicine(long id, Medicines medicine) {
-        medRepository.save(medicine);
-    }
 
     public void deleteMedicine(long id) {
         medRepository.deleteById(id);
