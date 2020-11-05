@@ -1,9 +1,7 @@
 
+t	java:S116"SRename this field "med_Name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™ΰόÿÿÿÿ8λύ®Φ.
+o	java:S100!"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°Ωίÿÿÿÿÿ8λύ®Φ.
+r	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°Ωίÿÿÿÿÿ8λύ®Φ.
 —
 java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ΞΡΫ¬
-M
-java:S1135("2Complete the task associated to this TODO comment.(ΓιΉΰϊÿÿÿÿ
-r	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°Ωίÿÿÿÿÿ8λύ®Φ.
-t	java:S116"SRename this field "med_Name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™ΰόÿÿÿÿ8λύ®Φ.
 i	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Φφ– 8λύ®Φ.
-o	java:S100!"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°Ωίÿÿÿÿÿ8λύ®Φ.

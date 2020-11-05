@@ -1,6 +1,6 @@
-DROP table IF EXISTS Medicines;
+DROP table IF EXISTS Medicine;
 
-create Table Medicines (
+create Table Medicine (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    med_Name VARCHAR(250)
+    name VARCHAR(250)
 );

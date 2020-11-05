@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.nhsbsa.medicinelist.MedicinelistApplicationTests
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.659 s - in com.nhsbsa.medicinelist.MedicinelistApplicationTests
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.763 s - in com.nhsbsa.medicinelist.MedicinelistApplicationTests
+>>>>>>> addmedform

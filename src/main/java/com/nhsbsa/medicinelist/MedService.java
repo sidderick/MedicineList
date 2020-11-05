@@ -12,26 +12,32 @@ public class MedService {
     private MedRepository medRepository;
 
 
-    public List<Medicines> getAllMeds() {
+    public List<Medicine> getAllMeds() {
 
-        List<Medicines> medicines = new ArrayList<>();
+        List<Medicine> medicine = new ArrayList<>();
 
         medRepository.findAll()
-                .forEach(medicines::add);
-        return medicines;
+                .forEach(medicine::add);
+        return medicine;
     }
 
-   /* public void addMedicine(Medicines medicine) {
+    public void addMedicine(Medicine medicine) {
         medRepository.save(medicine);
     }
 
-    public Optional<Medicines> getMedicine(long id) {
+
+    public void updateMedicine(long id, Medicine medicine) {
+        medRepository.save(medicine);
+    }
+
+    public List<Medicine> listMedicineByName(String medName) {
+        return medRepository.findByName(medName);
+    }
+
+ /*   public Optional<Medicines> getMedicine(long id) {
         return medRepository.findById(id);
     }
 
-    public void updateMedicine(long id, Medicines medicine) {
-        medRepository.save(medicine);
-    }
 
     public void deleteMedicine(long id) {
         medRepository.deleteById(id);

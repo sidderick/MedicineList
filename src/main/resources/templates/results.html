@@ -8,8 +8,8 @@
 <div align="center">
 <h1>Medicine List</h1>
 <a th:href="@{/}">Home</a>
+<a th:href="@{/medicines/search/{medName}}"></a>
 <a th:href="@{control}">Control</a>
-<a th:href="@{addmedicines}">Add Medicine</a>
 </div>
     <table>
         <thead>
@@ -19,12 +19,13 @@
             </tr>
         </thead>
        <tbody>
-            <tr th:each="medicines : ${medicines}">
-                <td th:text="${medicines.id}">001</td>
-                <td th:text="${medicines.name}">default</td>
+            <tr th:each="medicine : ${medicine}">
+                <td th:text="${medicine.id}">001</td>
+                <td th:text="${medicine.name}">default</td>
             </tr>
         </tbody>
     </table>
+
 
 </body>
 </html>
