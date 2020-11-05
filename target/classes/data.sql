@@ -1,4 +1,4 @@
-INSERT INTO MEDICINE (name) VALUES
+INSERT INTO MEDICINE (NAME) VALUES
 ('aspirin'),
 ('paracetamol'),
 ('ibuprofen'),

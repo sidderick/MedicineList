@@ -3,5 +3,6 @@ com/nhsbsa/medicinelist/CrudControl.class
 com/nhsbsa/medicinelist/MedicinelistApplication.class
 com/nhsbsa/medicinelist/MedRepository.class
 com/nhsbsa/medicinelist/BasepageController.class
+com/nhsbsa/medicinelist/Medicines.class
 com/nhsbsa/medicinelist/MedController.class
 com/nhsbsa/medicinelist/Medicine.class

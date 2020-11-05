@@ -1,6 +1,7 @@
-DROP table IF EXISTS Medicine;
+DROP ALL OBJECTS;
+DROP  table IF EXISTS Medicine;
 
 create Table Medicine (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(250)
+    NAME VARCHAR(250)
 );

@@ -9,6 +9,7 @@ public interface MedRepository extends CrudRepository<Medicine, String> {
 
     List<Medicine> findByName(String name);
 
+
     void deleteById(long id);
 
 

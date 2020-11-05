@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MedService {
@@ -34,14 +35,14 @@ public class MedService {
         return medRepository.findByName(medName);
     }
 
- /*   public Optional<Medicines> getMedicine(long id) {
+   public Optional<Medicine> getMedicine(long id) {
         return medRepository.findById(id);
     }
 
 
     public void deleteMedicine(long id) {
         medRepository.deleteById(id);
-    }*/
+    }
 
 
 }

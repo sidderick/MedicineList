@@ -2202,3 +2202,12 @@ INSERT INTO MEDICINES (med_Name) VALUES ('aspirin'), ('calpol'), ('ibuprofen'), 
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+2020-11-05 15:29:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP ALL OBJECT[*] DROP TABLE IF EXISTS MEDICINE"; expected "OBJECTS"; SQL statement:
+drop all object DROP table IF EXISTS Medicine [42001-200]
+2020-11-05 15:29:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP ALL OBJECTS DROP[*] TABLE IF EXISTS MEDICINE"; SQL statement:
+drop all objects DROP table IF EXISTS Medicine [42000-200]
+2020-11-05 15:30:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP OBJECTS[*]"; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE, SYNONYM"; SQL statement:
+DROP OBJECTS [42001-200]
