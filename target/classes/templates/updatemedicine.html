@@ -9,12 +9,12 @@
 <div align="center">
     <h1>Update Medicine</h1>
     <a th:href="@{/}">Home</a>
-    <a th:href="@{medicines}">Medicines</a>
-    <a th:href="@{addmedicines}">Medicines</a>
+    <a th:href="@{/medicines}">Medicines</a>
+    <a th:href="@{/addmedicines}">Add Medicines</a>
 
 </div>
 
-<form action="#" th:action="@{/medicines/update/{id}(id=${medicines.id})}" th:object="${medicines}" method="post">
+<form action="#" th:action="@{/medicines/update/{id}(id=${medicine.id})}" th:object="${medicine}" method="post">
     <label for="name">Name</label>
     <input type="text" th:field="*{name}" id="name" placeholder="Medicine Name">
     <input type="submit" value="Update Medicine">
