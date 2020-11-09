@@ -30,14 +30,9 @@ public class MedService {
         medRepository.save(medicine);
     }
 
-    public List<Medicine> listMedicineByName(String medName) {
-        return medRepository.findByName(medName);
+    public List<Medicine> listMedicineByName(String name) {
+        return medRepository.findByName(name);
     }
-
-
-
-
-
 
     public void deleteMedicine(long id) {
         medRepository.deleteById(id);

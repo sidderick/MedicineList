@@ -47,25 +47,16 @@ public class MedController {
         return "updatemedicine";
     }
 
-
-
-        @Transactional
-        @RequestMapping(value = "/medicines/delete/{id}")
-        public void deleteMedicine(@PathVariable long id, Model model) {
-            model.addAttribute("medicines", medService.getAllMeds());
-            medService.deleteMedicine(id);
-        }
-/*
-
-    @RequestMapping(value="/medicines/delete/{id}")
-    public String deleteMedicine(@PathVariable("id") long id, Model model) {
+    @Transactional
+    @GetMapping(value = "/medicines/delete/{id}")
+    public String deleteMedicine(@PathVariable long id, Model model) {
         model.addAttribute("medicines", medService.getAllMeds());
         medService.deleteMedicine(id);
-        return "medicines";
+        return "redirect:/medicines";
     }
 
-*/
-    @GetMapping(value="/medicines/search/{medName}")
+
+    @GetMapping(value="/medicines/search/{name}")
     public Model findMedicines(@PathVariable String name, Model model) throws ServletException, IOException {
         model.addAttribute("medicineResults", medService.listMedicineByName(name));
 
