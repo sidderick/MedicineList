@@ -1,10 +1,18 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
+=======
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+>>>>>>> UserInputToAddNewMeds
 <head>
     <meta charset="UTF-8">
     <title>List of medicine</title>
 </head>
+<<<<<<< HEAD
 <body>
+=======
+<form>
+>>>>>>> UserInputToAddNewMeds
 <div align="center">
 <h1>Medicine List</h1>
 <a th:href="@{/}">Home</a>
@@ -21,6 +29,7 @@
        <tbody>
             <tr th:each="medicine : ${medicine}">
                 <td th:text="${medicine.id}">001</td>
+<<<<<<< HEAD
                 <td th:text="${medicine.name}">default</td>
             </tr>
         </tbody>
@@ -28,4 +37,17 @@
 
 
 </body>
+=======
+                <td th:text="${medicine.med_Name}">default</td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+<br>
+<form>
+    <label for="Name">Medcience</label>
+    <input type="text" id="Name" name="Name"><br><br>
+    <input type="submit" value="Submit">
+</form>
+>>>>>>> UserInputToAddNewMeds
 </html>

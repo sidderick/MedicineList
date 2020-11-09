@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
+=======
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+>>>>>>> UserInputToAddNewMeds
 <head>
     <meta charset="UTF-8">
     <title>List of medicine</title>
@@ -21,7 +25,11 @@
        <tbody>
             <tr th:each="medicine : ${medicine}">
                 <td th:text="${medicine.id}">001</td>
+<<<<<<< HEAD
                 <td th:text="${medicine.name}">default</td>
+=======
+                <td th:text="${medicine.med_Name}">default</td>
+>>>>>>> UserInputToAddNewMeds
             </tr>
         </tbody>
     </table>

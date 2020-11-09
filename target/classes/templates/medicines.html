@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>List of medicine</title>
@@ -9,7 +9,6 @@
 <h1>Medicine List</h1>
 <a th:href="@{/}">Home</a>
 <a th:href="@{control}">Control</a>
-<a th:href="@{addmedicines}">Add Medicine</a>
 </div>
     <table>
         <thead>
@@ -19,11 +18,13 @@
             </tr>
         </thead>
        <tbody>
-            <tr th:each="medicines : ${medicines}">
-                <td th:text="${medicines.id}">001</td>
-                <td th:text="${medicines.name}">default</td>
-            </tr>
+       <tr th:each="medicines : ${medicines}">
+           <td th:text="${medicines.id}">001</td>
+           <td th:text="${medicines.name}">default</td>
+       </tr>
         </tbody>
     </table>
+
+
 </body>
 </html>
