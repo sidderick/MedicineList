@@ -34,14 +34,28 @@ public class MedService {
         return medRepository.findByName(medName);
     }
 
- /*   public Optional<Medicines> getMedicine(long id) {
-        return medRepository.findById(id);
-    }
+
+
+
 
 
     public void deleteMedicine(long id) {
         medRepository.deleteById(id);
-    }*/
+
+    }
+
+
+
+
+
+
+
+
+ /*   public Optional<Medicines> getMedicine(long id) {
+        return medRepository.findById(id);
+    }
+*/
+
 
 
 }

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.transaction.Transactional;
 import java.io.IOException;
 
 
@@ -47,14 +48,23 @@ public class MedController {
     }
 
 
-    /*
 
-
-        @RequestMapping(value = "/medicines/{id}", method = RequestMethod.DELETE)
-        public void deleteMedicine(@PathVariable long id) {
+        @Transactional
+        @RequestMapping(value = "/medicines/delete/{id}")
+        public void deleteMedicine(@PathVariable long id, Model model) {
+            model.addAttribute("medicines", medService.getAllMeds());
             medService.deleteMedicine(id);
         }
-    */
+/*
+
+    @RequestMapping(value="/medicines/delete/{id}")
+    public String deleteMedicine(@PathVariable("id") long id, Model model) {
+        model.addAttribute("medicines", medService.getAllMeds());
+        medService.deleteMedicine(id);
+        return "medicines";
+    }
+
+*/
     @GetMapping(value="/medicines/search/{medName}")
     public Model findMedicines(@PathVariable String name, Model model) throws ServletException, IOException {
         model.addAttribute("medicineResults", medService.listMedicineByName(name));
