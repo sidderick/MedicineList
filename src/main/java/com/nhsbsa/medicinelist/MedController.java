@@ -78,7 +78,7 @@ public class MedController {
     @GetMapping(value="/medicines/search/{medName}")
     public Model findMedicines(@PathVariable String name, Model model) throws ServletException, IOException {
         model.addAttribute("medicineResults", medService.listMedicineByName(name));
-
+        medService.listMedicineByName(name);
         return model;
     }
 

@@ -1,4 +1,5 @@
 
+<<<<<<< Updated upstream
 _
 java:S1128	"BRemove this unused import 'javax.servlet.http.HttpServletRequest'.(ø©¹…8ˆ¤ÅËØ.
 ]	java:S125)"<This block of commented-out lines of code should be removed.(§¶’–úÿÿÿÿ8î–ƒœ×.
@@ -7,3 +8,21 @@ java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMa
 W	java:S125"<This block of commented-out lines of code should be removed.(—Å¢u8ª”œ×.
 g
 java:S4488""JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(åæùú8î–ƒœ×.
+=======
+g
+java:S1192'"JDefine a constant instead of duplicating this literal "medicines" 3 times.(Ü¬ôİ8†û›’Û.
+b
+java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(ÜĞí—ûÿÿÿÿ8†û›’Û.
+e
+java:S4488%"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ì²­8âÿ›×.
+o
+java:S1192"MDefine a constant instead of duplicating this literal "addmedicines" 3 times.(êò†õùÿÿÿÿ8†û›’Û.
+_
+java:S1128	"BRemove this unused import 'javax.servlet.http.HttpServletRequest'.(ø©¹…8†û›’Û.
+‰
+java:S1130<"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(”•‚Ì8†û›’Û.
+]
+java:S4684,"@Replace this persistent entity with a simple POJO or DTO object.(†ĞÚê8†û›’Û.
+”
+java:S1130<"wRemove the declaration of thrown exception 'javax.servlet.ServletException', as it cannot be thrown from method's body.(”•‚Ì8†û›’Û.
+>>>>>>> Stashed changes

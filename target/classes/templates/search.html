@@ -10,6 +10,7 @@
 </head>
 <<<<<<< HEAD
 <body>
+<<<<<<< Updated upstream
 =======
 <form>
 >>>>>>> UserInputToAddNewMeds
@@ -34,6 +35,22 @@
             </tr>
         </tbody>
     </table>
+=======
+
+<div align="center">
+    <h1>Lookup Medicine</h1>
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/medicines}">Medicines</a>
+
+
+</div>
+
+<form action="#" th:action="@{/medicines/search/{name}}" th:object="${medicine}" method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Medicine Name">
+    <input type="submit" value="Update Medicine">
+</form>
+>>>>>>> Stashed changes
 
 
 </body>
