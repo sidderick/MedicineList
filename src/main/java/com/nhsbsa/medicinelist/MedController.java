@@ -16,6 +16,11 @@ public class MedController {
     @Autowired
     private MedService medService;
 
+    @RequestMapping(value="/")
+    public static String MedInventory() {
+        return "index";
+    }
+
     //returns addmedicines form where user can add in new entries
     @GetMapping("/addmedicines")
     public String addMedForm(Model model) {
@@ -39,7 +44,7 @@ public class MedController {
         return "medicines";
     }
 
-    @RequestMapping(value = "/medicines/update/{id}")
+    @PutMapping(value = "/medicines/update/{id}")
     public String updateMedicine(@ModelAttribute Medicine medicine, @PathVariable("id") long id, Model model) {
         model.addAttribute("updatemedicine", medicine);
         medService.updateMedicine(id, medicine);
