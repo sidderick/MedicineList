@@ -2,6 +2,8 @@ package com.nhsbsa.medicinelist;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +29,11 @@ public class MedService {
 
 
     public void updateMedicine(long id, Medicine medicine) {
-        medRepository.save(medicine);
+        if (medRepository.findById(id) != null) {
+            medRepository.save(medicine);
+        } else {
+            throw new EntityNotFoundException("id not found");
+        }
     }
 
     public List<Medicine> listMedicineByName(String name) {
@@ -38,19 +44,5 @@ public class MedService {
         medRepository.deleteById(id);
 
     }
-
-
-
-
-
-
-
-
- /*   public Optional<Medicines> getMedicine(long id) {
-        return medRepository.findById(id);
-    }
-*/
-
-
 
 }

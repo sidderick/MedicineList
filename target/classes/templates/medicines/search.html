@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+<div align="center">
+    <h1>Search Medicines</h1>
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/addmedicines}">Add Medicine</a>
+</div>
+
+<form th:action="@{/search}">
+    Filter: <input type="text" name="keyword" id="keyword" th:value="${keyword}" required />
+    <input type="submit" value="Search">
+</form>
+
+<br>
+
+<table>
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Medicine Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="medicines : ${medicines}">
+        <td th:text="${medicines.id}">001</td>
+        <td th:text="${medicines.name}">default</td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>

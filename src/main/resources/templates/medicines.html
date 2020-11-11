@@ -18,9 +18,9 @@
             </tr>
         </thead>
        <tbody>
-            <tr th:each="medicines : ${medicines}">
-                <td th:text="${medicines.id}">001</td>
-                <td th:text="${medicines.name}">default</td>
+            <tr th:each="medicine : ${medicines}">
+                <td th:text="${medicine.id}">001</td>
+                <td th:text="${medicine.name}">default</td>
             </tr>
         </tbody>
     </table>
