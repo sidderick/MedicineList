@@ -37,12 +37,19 @@ public class MedService {
     }
 
     public List<Medicine> listMedicineByName(String name) {
-        return medRepository.findByName(name);
+        if (medRepository.findByName(name) != null) {
+            return medRepository.findByName(name);
+        } else {
+            throw new EntityNotFoundException("id not found");
+        }
     }
 
     public void deleteMedicine(long id) {
-        medRepository.deleteById(id);
-
+        if (medRepository.findById(id) != null) {
+            medRepository.deleteById(id);
+        } else {
+            throw new EntityNotFoundException("id not found");
+        }
     }
-
 }
+
