@@ -8,12 +8,13 @@
 <div align="center">
     <h1>Search Medicines</h1>
     <a th:href="@{/}">Home</a>
+    <a th:href="@{/medicines}">Medicines</a>
     <a th:href="@{/addmedicines}">Add Medicine</a>
 </div>
 
 <form th:action="@{search}">
     Filter: <input type="text" name="name" id="name" th:value="${name}" required />
-    <input type="submit"  value="medicines/Search" style="color: buttonface;">
+    <input type="submit"  value="Submit">
 </form>
 <br>
 
