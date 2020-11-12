@@ -11,11 +11,10 @@
     <a th:href="@{/addmedicines}">Add Medicine</a>
 </div>
 
-<form th:action="@{/search}">
-    Filter: <input type="text" name="keyword" id="keyword" th:value="${keyword}" required />
-    <input type="submit" value="Search">
+<form th:action="@{search}">
+    Filter: <input type="text" name="name" id="name" th:value="${name}" required />
+    <input type="submit"  value="medicines/Search" style="color: buttonface;">
 </form>
-
 <br>
 
 <table>
@@ -26,9 +25,9 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="medicines : ${medicines}">
-        <td th:text="${medicines.id}">001</td>
-        <td th:text="${medicines.name}">default</td>
+    <tr th:each="medicine : ${medicines}">
+        <td th:text="${medicine.id}">001</td>
+        <td th:text="${medicine.name}">default</td>
     </tr>
     </tbody>
 </table>
