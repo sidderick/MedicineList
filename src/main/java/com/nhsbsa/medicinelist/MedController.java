@@ -1,14 +1,13 @@
 package com.nhsbsa.medicinelist;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
-import java.io.IOException;
+import java.util.List;
 
 
 @Controller
@@ -55,13 +54,13 @@ public class MedController {
         return "redirect:/medicines";
     }
 
-
-    @GetMapping(value="/medicines/search/{name}")
-    public Model findMedicines(@PathVariable String name, Model model) throws ServletException, IOException {
-        model.addAttribute("medicineResults", medService.listMedicineByName(name));
-
+    @GetMapping(value="/medicines/search")
+    public Model findMedicines(@RequestParam(value = "name", required=false) String name, Model model) {
+        model.addAttribute("medicines", medService.listMedicineByName(name));
         return model;
     }
 
-
 }
+
+
+
