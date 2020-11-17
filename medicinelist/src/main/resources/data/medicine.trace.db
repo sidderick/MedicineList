@@ -2211,3 +2211,6 @@ drop all objects DROP table IF EXISTS Medicine [42000-200]
 2020-11-05 15:30:34 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP OBJECTS[*]"; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE, SYNONYM"; SQL statement:
 DROP OBJECTS [42001-200]
+2020-11-16 10:41:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "('codeine'[*])"; expected "(, WITH, SELECT, TABLE, VALUES"; SQL statement:
+('codeine') [42001-200]

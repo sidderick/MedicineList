@@ -11,15 +11,11 @@
     <a th:href="@{/}">Home</a>
     <a th:href="@{/medicines}">Medicines</a>
     <a th:href="@{/medicines/search}">Search</a>
-
 </div>
-
 <form action="#" th:action="@{/addmedicines}" th:object="${addmedicines}" method="post">
     <p>Medicine Name:  <input type="text" th:field="*{name}" placeholder="Input Medicine Name"/></p>
     <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
 </form>
-
-
 </body>
 </html>
 

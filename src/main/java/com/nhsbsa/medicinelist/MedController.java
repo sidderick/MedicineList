@@ -1,12 +1,12 @@
 package com.nhsbsa.medicinelist;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -16,6 +16,8 @@ public class MedController {
 
     @Autowired
     private MedService medService;
+
+
 
     @RequestMapping(value="/")
     public static String MedInventory() {
@@ -61,12 +63,19 @@ public class MedController {
     }
 
     @GetMapping(value="/medicines/search")
-    public Model findMedicines(@RequestParam(value = "name", required=false) String name, Model model) {
+    public Object findMedicines(@RequestParam(value = "name", required=false) String name, Model model) {
         model.addAttribute("medicines", medService.listMedicineByName(name));
-        return model;
+      return model;
     }
+    MedRepository med;
 
+    PageRequest pageable = PageRequest.of(0, 5);
 
+    @RequestMapping(path = "/medicines")
+    @Query("select * from MEDICINE")
+    List medicinesPage(Pageable pageable) {
+        return  med.findAll(pageable);
+    }
 
 }
 
