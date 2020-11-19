@@ -1,6 +1,7 @@
 package com.nhsbsa.medicinelist;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Medicine {
@@ -15,6 +16,16 @@ public class Medicine {
     public Medicine() {
 
     }
+
+    public Medicine(int i, String spring_in_action) {
+    }
+
+    public static int size() {
+        return 0;
+    }
+
+
+
     public String getName() {
         return name;
     }

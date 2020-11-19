@@ -1,12 +1,8 @@
 package com.nhsbsa.medicinelist;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
-import sun.jvm.hotspot.debugger.Page;
-
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,8 +11,13 @@ import java.util.List;
 @Service
 public class MedService {
 
+
     @Autowired
     private MedRepository medRepository;
+
+    PageRequest pageable = PageRequest.of(1, 5);
+
+    final private List<Medicine> books = medicinceutlils.buildMedlist();
 
 
     public List<Medicine> getAllMeds() {
@@ -34,7 +35,7 @@ public class MedService {
 
 
     public void updateMedicine(long id, Medicine medicine) {
-        if (medRepository.findById(id) != null) {
+        if (medRepository.findById(id).isPresent()) {
             medRepository.save(medicine);
         } else {
             throw new EntityNotFoundException("id not found");
@@ -50,15 +51,27 @@ public class MedService {
     }
 
     public void deleteMedicine(long id) {
-        if (medRepository.findById(id) != null) {
+        if (medRepository.findById(id).isPresent()) {
             medRepository.deleteById(id);
         } else {
             throw new EntityNotFoundException("id not found");
         }
 
     }
-   
-    }
+    public Page<Medicine> findPaginated(Pageable pageable) {
+        int pageSize = pageable.getPageSize();
+        int currentPage = pageable.getPageNumber();
+        int startItem = currentPage * pageSize;
+        List<Medicine> list;
 
+        if (Medicine.size() < startItem) {
+            list = Collections.emptyList();
+        } else {
+            int toIndex = Math.min(startItem + pageSize, Medicine.size());
+        }
+        return new PageImpl<>((List<Medicine>) medRepository.findAll(), PageRequest.of(currentPage, pageSize), Medicine.size());
+    }
 }
+
+
 
