@@ -16,8 +16,8 @@
     <tr th:each="medicine,iStat : ${medicinePage.content}"
         th:style="${iStat.odd}? 'font-weight: bold;'"
         th:alt-title="${iStat.even}? 'even' : 'odd'">
-        <td th:text="${medicine.id}" />
-        <td th:text="${medicine.name}" />
+        <td th:text="${medicine.id}"></td>
+        <td th:text="${medicine.name}"></td>
     </tr>
     </tbody>
 </table>

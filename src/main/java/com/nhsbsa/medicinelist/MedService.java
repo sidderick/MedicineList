@@ -11,14 +11,12 @@ import java.util.List;
 @Service
 public class MedService {
 
-
     @Autowired
     private MedRepository medRepository;
 
-    PageRequest pageable = PageRequest.of(1, 5);
 
-    final private List<Medicine> books = medicinceutlils.buildMedlist();
 
+    final private List<Medicine> med = medicinceutlils.buildMedlist();
 
     public List<Medicine> getAllMeds() {
 
@@ -28,12 +26,9 @@ public class MedService {
                 .forEach(medicine::add);
         return medicine;
     }
-
     public void addMedicine(Medicine medicine) {
         medRepository.save(medicine);
     }
-
-
     public void updateMedicine(long id, Medicine medicine) {
         if (medRepository.findById(id).isPresent()) {
             medRepository.save(medicine);
@@ -41,7 +36,6 @@ public class MedService {
             throw new EntityNotFoundException("id not found");
         }
     }
-
     public List<Medicine> listMedicineByName(String name) {
         if (medRepository.findByName(name) != null) {
             return medRepository.findByName(name);
@@ -49,29 +43,24 @@ public class MedService {
             throw new EntityNotFoundException("id not found");
         }
     }
-
     public void deleteMedicine(long id) {
         if (medRepository.findById(id).isPresent()) {
             medRepository.deleteById(id);
         } else {
             throw new EntityNotFoundException("id not found");
         }
-
     }
+
     public Page<Medicine> findPaginated(Pageable pageable) {
         int pageSize = pageable.getPageSize();
         int currentPage = pageable.getPageNumber();
         int startItem = currentPage * pageSize;
         List<Medicine> list;
-
         if (Medicine.size() < startItem) {
             list = Collections.emptyList();
         } else {
             int toIndex = Math.min(startItem + pageSize, Medicine.size());
         }
-        return new PageImpl<>((List<Medicine>) medRepository.findAll(), PageRequest.of(currentPage, pageSize), Medicine.size());
+        return new PageImpl<>(medRepository.findAll(pageable), PageRequest.of(currentPage, pageSize), Medicine.size());
     }
 }
-
-
-

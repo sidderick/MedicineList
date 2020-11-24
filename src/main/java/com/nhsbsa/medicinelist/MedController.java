@@ -17,9 +17,6 @@ public class MedController {
     @Autowired
     private MedService medService;
 
-
-
-
     @RequestMapping(value="/")
     public static String MedInventory() {
         return "index";
@@ -69,20 +66,12 @@ public class MedController {
       return model;
     }
 
-
-
-
-
-
     @RequestMapping(value = "/Listmedicine", method = RequestMethod.GET)
-    public String Listmedicine(
-            Model model,
-            @RequestParam("page") Optional<Integer> page,
-            @RequestParam("size") Optional<Integer> size) {
+    public String Listmedicine( Model model, @RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size) {
         int currentPage = page.orElse(1);
         int pageSize = size.orElse(5);
 
-        Page<Medicine> medicinePage = medService.findPaginated(PageRequest.of(currentPage - 1, pageSize));
+        Page<Medicine> medicinePage = medService.findPaginated(PageRequest.of(currentPage -1, pageSize));
 
         model.addAttribute("medicinePage", medicinePage);
 
@@ -97,7 +86,3 @@ public class MedController {
         return "Listmedicine.html";
     }
 }
-
-
-
-

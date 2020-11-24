@@ -2,6 +2,7 @@ package com.nhsbsa.medicinelist;
 
 
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 import java.util.Optional;
@@ -14,4 +15,5 @@ public interface MedRepository extends CrudRepository <Medicine, String> {
 
     void deleteById(long id);
 
+    List<Medicine> findAll(Pageable pageable);
 }
