@@ -1,6 +1,8 @@
 package com.nhsbsa.medicinelist;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.*;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -66,22 +68,19 @@ public class MedController {
       return model;
     }
 
-    @RequestMapping(value = "/Listmedicine", method = RequestMethod.GET)
-    public String Listmedicine( Model model, @RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size) {
-        int currentPage = page.orElse(1);
+
+
+    @RequestMapping(value="/Listmedicine/{pagenum}", method = RequestMethod.GET)
+    public String Listmedicine(@PathVariable int pagenum,  Model model, @RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size ) {
+        int currentPage = page.orElse(pagenum);
         int pageSize = size.orElse(5);
 
-        Page<Medicine> medicinePage = medService.findPaginated(PageRequest.of(currentPage -1, pageSize));
+        Page<Medicine> medicinePage = medService.findPaginated(PageRequest.of(currentPage-1, pageSize));
 
         model.addAttribute("medicinePage", medicinePage);
 
-        int totalPages = medicinePage.getTotalPages();
-        if (totalPages > 0) {
-            List<Integer> pageNumbers = IntStream.rangeClosed(1, totalPages)
-                    .boxed()
-                    .collect(Collectors.toList());
-            model.addAttribute("pageNumbers", pageNumbers);
-        }
+
+
 
         return "Listmedicine.html";
     }

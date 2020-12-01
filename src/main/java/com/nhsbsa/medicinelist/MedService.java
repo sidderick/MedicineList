@@ -14,8 +14,6 @@ public class MedService {
     @Autowired
     private MedRepository medRepository;
 
-
-
     final private List<Medicine> med = medicinceutlils.buildMedlist();
 
     public List<Medicine> getAllMeds() {
